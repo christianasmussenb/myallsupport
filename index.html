@@ -68,14 +68,17 @@
       gap: 18px;
       flex-wrap: wrap;
     }
-    .nav-links a {
+    .nav-links a:not(.btn):not(.btn-secondary) {
       font-size: 14px;
       color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 8px;
-      transition: color 0.2s, background 0.2s;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .nav-links a:not(.btn):not(.btn-secondary):hover { color: var(--text); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); }
+    .nav-links a.btn { border: none; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -101,6 +104,7 @@
     .section {
       padding: 80px 0;
     }
+    .section, .hero { scroll-margin-top: 110px; }
     .hero {
       padding: 80px 0 60px;
       position: relative;
@@ -510,7 +514,7 @@
       </div>
       <div>
         <h4>Accesos rápidos</h4>
-        <p class="muted-link"><a class="muted-link" href="#pilares">Soluciones</a> · <a class="muted-link" href="#pasos">Metodología</a> · <a class="muted-link" href="#contacto">Contacto</a></p>
+        <p class="muted-link"><a class="muted-link" href="#valor">Soluciones</a> · <a class="muted-link" href="#pasos">Metodología</a> · <a class="muted-link" href="#contacto">Contacto</a> · <a class="muted-link" href="#noticias">Noticias</a></p>
       </div>
     </div>
   </footer>
