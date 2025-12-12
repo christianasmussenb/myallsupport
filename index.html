@@ -3,64 +3,518 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyAllSupport – Contacto</title>
+  <title>myAllSupport | Expertos en SAP, TI y Continuidad</title>
+  <meta name="description" content="myAllSupport.cl replica la propuesta de valor de myAllSupport.com: soporte SAP, continuidad tecnológica, ciberseguridad y evolución inteligente con diagnósticos rápidos y ahorro inmediato." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #070c1c;
+      --bg-2: #0d1835;
+      --card: #101c36;
+      --card-2: #0f274a;
+      --accent: #49d3c8;
+      --accent-2: #4d7bff;
+      --text: #e9f1ff;
+      --muted: #a6b7d6;
+      --border: #1c2b4f;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 40px;
-      text-align: center;
+      background: radial-gradient(circle at 20% 20%, rgba(73,211,200,0.08), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(77,123,255,0.14), transparent 30%),
+                  linear-gradient(180deg, #0a1228 0%, #070c1c 100%);
+      color: var(--text);
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--text); text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7,12,28,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .logo img { width: 44px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #0b1020;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 8px 25px rgba(77,123,255,0.3);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(77,123,255,0.35); }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+    .section {
+      padding: 80px 0;
+    }
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(77,123,255,0.18), transparent 40%),
+                  radial-gradient(circle at 10% 0%, rgba(73,211,200,0.16), transparent 35%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+    .hero-card {
+      background: linear-gradient(150deg, rgba(16,28,54,0.85), rgba(16,39,74,0.85));
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      background: rgba(73,211,200,0.12);
+      color: var(--accent);
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h1, h2, h3, h4 {
+      margin: 12px 0 10px;
+      font-family: 'PT Serif', 'Manrope', serif;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; }
+    h2 { font-size: clamp(26px, 3.3vw, 38px); line-height: 1.2; }
+    h3 { font-size: 22px; }
+    p { color: var(--muted); margin: 0 0 12px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .stat {
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+    .stat strong { display: block; font-size: 20px; color: #fff; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
     }
     .card {
-      background: white;
-      width: 100%;
-      max-width: 480px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
+    .card img.icon { width: 44px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
+    .tagline { color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+    .pillars { margin-top: 18px; }
+    .badge { display: inline-block; padding: 6px 10px; border-radius: 10px; background: rgba(77,123,255,0.16); color: #dbe4ff; font-weight: 600; font-size: 12px; }
+    .feature-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); }
+    .feature-list span { color: var(--accent); font-weight: 800; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .step {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step-number {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.08);
+      font-size: 48px;
+    }
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      align-items: center;
+      margin-top: 22px;
+    }
+    .brand {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90px;
+    }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 22px; }
+    .quote {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+      min-height: 230px;
+    }
+    .quote small { color: var(--muted); }
+    .blog { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 18px; }
+    .post { border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,0.02); overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+    .post img { width: 100%; height: 170px; object-fit: cover; }
+    .post-body { padding: 14px; display: grid; gap: 6px; }
+    .contact {
+      background: linear-gradient(120deg, rgba(77,123,255,0.26), rgba(73,211,200,0.2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      align-items: center;
+    }
+    form { display: grid; gap: 10px; }
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(7,12,28,0.5);
+      color: var(--text);
+      font: inherit;
     }
-    button {
-      margin-top: 20px;
-      background: #0052cc;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    input:focus, textarea:focus { outline: 2px solid rgba(77,123,255,0.4); }
+    footer {
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--border);
+      margin-top: 80px;
+      background: rgba(0,0,0,0.2);
     }
-    button:hover {
-      background: #003d99;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .muted-link { color: var(--muted); font-size: 14px; }
+    @media (max-width: 768px) {
+      .hero { padding-top: 60px; }
+      .nav { flex-wrap: wrap; gap: 10px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .logo img { width: 36px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <h2>Contacto</h2>
-    <p>Envíanos un mensaje y te responderemos pronto.</p>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <img src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/691f3f41a48e993490a7edd1_mASi.png" alt="myAllSupport logo">
+        <span>myAllSupport.cl</span>
+      </div>
+      <div class="nav-links">
+        <a href="#valor">Propuesta</a>
+        <a href="#pilares">Pilares</a>
+        <a href="#pasos">3 pasos</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn-secondary" href="https://hasm.grupocnet.com:9001/sap(bD1lcyZjPTAwMSZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm?sap-client=001&sap-language=ES/" target="_blank">Requerimientos</a>
+        <a class="btn" href="https://calendly.com/christian-htc/30min" target="_blank">Agenda diagnóstico</a>
+      </div>
+    </div>
+  </header>
 
-    <form action="https://formspree.io/f/xeoyrnwz" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu email" required>
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="eyebrow">Generamos ahorros que financian la innovación</div>
+        <h1>Soporte experto en SAP, TI y operaciones que libera a tu negocio para crecer.</h1>
+        <p>Más de 30 años en Latam asegurando continuidad, optimizando SAP y habilitando evolución inteligente con datos, automatización y ciberseguridad.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://calendly.com/christian-htc/30min" target="_blank">Agenda con un especialista</a>
+          <a class="btn-secondary" href="#contacto">Escríbenos</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>33+</strong><span>Industrias atendidas</span></div>
+          <div class="stat"><strong>20+</strong><span>Expertos a tu servicio</span></div>
+          <div class="stat"><strong>40%</strong><span>Ahorro inmediato</span></div>
+          <div class="stat"><strong>7</strong><span>Países con operación</span></div>
+        </div>
+      </div>
+      <div class="hero-card" style="background: linear-gradient(145deg, rgba(16,28,54,0.7), rgba(77,123,255,0.25)), url('https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/693c6bb7b0092bca3cef68f8_Banner%20nuevo%20%283%29_poster.0000000.jpg') center/cover no-repeat;">
+        <div class="badge">Cómo trabajamos</div>
+        <h3>El diagnóstico del ahorro</h3>
+        <p>Sesión inicial centrada en tus objetivos financieros y operativos. Identificamos puntos de mejora y transformamos gasto fijo en runway para innovación.</p>
+        <h3>Hoja de ruta financiada</h3>
+        <p>Te entregamos métricas de ahorro proyectado y el plan de continuidad digital y evolución, pagado con la reducción del gasto en soporte.</p>
+        <h3>Arranque seguro</h3>
+        <p>Implementación monitorizada para asegurar continuidad operativa y evolución, sin riesgos ni interrupciones.</p>
+      </div>
+    </div>
+  </section>
 
-    <p style="margin-top:20px;font-size:14px;color:#777;">
-      También puedes agendar reunión aquí:<br>
-      <a href="https://calendly.com/christian-htc/30min" target="_blank">
-        Calendly – Agendar 30 min
-      </a>
-    </p>
-  </div>
+  <section id="valor" class="section">
+    <div class="container">
+      <div class="eyebrow">Propuesta de valor</div>
+      <h2>Integramos cuatro pilares para operar, ahorrar y evolucionar de manera simultánea.</h2>
+      <p class="tagline">Abarcamos todo el ciclo: soporte SAP, infraestructura híbrida y segura, operaciones logísticas digitales y evolución con datos e IA.</p>
+      <div class="card-grid pillars">
+        <div class="card">
+          <img class="icon" src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/69226155c07c01a5614c89f1_tecnologia-del-futuro.png" alt="Continuidad Empresarial">
+          <h3>Continuidad Empresarial</h3>
+          <p>Optimización y soporte SAP (ECC, S/4HANA, RISE) con AMS, ajuste funcional/técnico y estrategias de ahorro sin riesgos.</p>
+          <span class="badge">SAP, AMS, Optimización</span>
+        </div>
+        <div class="card">
+          <img class="icon" src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/692261436d82e0d76c807b78_atras-en-el-tiempo.png" alt="Continuidad Tecnológica">
+          <h3>Continuidad Tecnológica</h3>
+          <p>Arquitecturas híbridas, conectividad y ciberseguridad avanzada (SOC, EDR/XDR, DRP) para evolucionar sin fricción ni riesgos.</p>
+          <span class="badge">Multinube + Ciberseguridad</span>
+        </div>
+        <div class="card">
+          <img class="icon" src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/6922613a6cc72b0fe88703df_innovacion.png" alt="Continuidad Operativa">
+          <h3>Continuidad Operativa</h3>
+          <p>Movilidad industrial, WMS, voice picking, drones y automatización documental para operar con trazabilidad y productividad.</p>
+          <span class="badge">Operaciones y Automatización</span>
+        </div>
+        <div class="card">
+          <img class="icon" src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/69226123a42b0a184f114649_atencion-sanitaria-electronica.png" alt="Evolución Inteligente">
+          <h3>Evolución Inteligente</h3>
+          <p>Datos, integración e IA: arquitecturas que integran información dispersa y habilitan analítica y proyectos de IA sin reemplazar sistemas actuales.</p>
+          <span class="badge">Datos + IA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 20px;">
+    <div class="container">
+      <div class="card" style="background: linear-gradient(120deg, rgba(77,123,255,0.18), rgba(73,211,200,0.12)); border-color: rgba(255,255,255,0.08);">
+        <div class="eyebrow">Aliados estratégicos</div>
+        <h3>Alianzas de talla mundial para implementar y operar tecnología crítica.</h3>
+        <div class="brands">
+          <div class="brand"><img src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/69207bdd837a6cbd56f3ff99_Honeywell-Logo.png" alt="Honeywell"></div>
+          <div class="brand"><img src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/6939df95500dcdfe709d7ec2_InterSystems_logo_(2016).svg.png" alt="InterSystems"></div>
+          <div class="brand"><img src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/6939e0c1bf004c842b388c93_bluestar-logo-white.png" alt="BlueStar"></div>
+          <div class="brand"><img src="https://cdn.prod.website-files.com/69135e01a5e9a370eb3c317f/6939e10506b3086aa091c1e6_df666fff435df275ae3974244232bd13.png" alt="Zebra"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pasos" class="section">
+    <div class="container">
+      <div class="eyebrow">Cómo lo hacemos</div>
+      <h2>Empieza la evolución en 3 pasos</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Diagnóstico del ahorro</h3>
+          <p>Sesión rápida con líderes de negocio para mapear procesos, uso de tecnología y costos. Identificamos ahorros y riesgos prioritarios.</p>
+          <ul class="feature-list">
+            <li><span>•</span> Foco en objetivos financieros y operativos</li>
+            <li><span>•</span> Hallazgos claros en menos de 90 minutos</li>
+          </ul>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Entregable de alto valor</h3>
+          <p>Hoja de ruta con métricas de ahorro proyectado, runway ganado y plan de continuidad digital y evolución financiado con esos ahorros.</p>
+          <ul class="feature-list">
+            <li><span>•</span> Priorización por impacto y riesgo</li>
+            <li><span>•</span> Modelos de ahorro y TCO</li>
+          </ul>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Arranque a modernizar</h3>
+          <p>Ejecución conjunta, monitoreada, con quick wins que aseguran continuidad operativa, ahorros tempranos y evolución sostenida.</p>
+          <ul class="feature-list">
+            <li><span>•</span> Gestión del cambio y acompañamiento</li>
+            <li><span>•</span> Gobernanza y KPIs visibles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="section" style="padding-top: 10px;">
+    <div class="container">
+      <div class="eyebrow">Historias reales</div>
+      <h2>¿Qué dicen nuestros clientes?</h2>
+      <div class="testimonials">
+        <div class="quote">
+          <p>“Confiar en myAllSupport ha sido una de nuestras decisiones más valiosas. Vemos resultados financieros y la tranquilidad de un soporte técnico y funcional que realmente nos respalda.”</p>
+          <div>
+            <strong>Juliana Garcia</strong><br>
+            <small>Dinpro</small>
+          </div>
+        </div>
+        <div class="quote">
+          <p>“Su apoyo no solo resuelve problemas, también optimiza nuestros sistemas SAP. Esa tranquilidad se traduce en mayor productividad y crecimiento sostenible.”</p>
+          <div>
+            <strong>Luis Enrique Gómez</strong><br>
+            <small>Convatec</small>
+          </div>
+        </div>
+        <div class="quote">
+          <p>“Logramos continuidad operativa en SAP y redujimos costos de soporte mientras modernizamos infraestructura y seguridad. Avanzamos sin frenar la operación.”</p>
+          <div>
+            <strong>Equipo de Operaciones</strong><br>
+            <small>Cliente de manufactura</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="eyebrow">Noticias</div>
+      <h2>Contenido desde myAllSupport.com</h2>
+      <div class="blog">
+        <article class="post">
+          <img src="https://cdn.prod.website-files.com/69135e02a5e9a370eb3c32a4/69223e86d26f45b1d547b7af_Disen%CC%83o%20sin%20ti%CC%81tulo%20(1).png" alt="VARTECH 2025">
+          <div class="post-body">
+            <span class="badge">Eventos</span>
+            <strong>¡De Bahamas con una Mente Expandida! Lo que Aprendimos en VARTECH 2025.</strong>
+            <small class="muted-link">Septiembre 23, 2025</small>
+          </div>
+        </article>
+        <article class="post">
+          <img src="https://cdn.prod.website-files.com/69135e02a5e9a370eb3c32a4/69224f8259954226fe46f6c9_Disen%CC%83o%20sin%20ti%CC%81tulo%20(3).png" alt="Deuda Tecnológica Cero">
+          <div class="post-body">
+            <span class="badge">Casos de éxito</span>
+            <strong>Ingenio Carmelita S.A. apuesta por la innovación y reduce deuda tecnológica.</strong>
+            <small class="muted-link">Septiembre 23, 2025</small>
+          </div>
+        </article>
+        <article class="post">
+          <div class="post-body">
+            <span class="badge">Más recursos</span>
+            <strong>Explora blog, historias y partners en el sitio principal.</strong>
+            <a class="btn-secondary" href="https://www.myallsupport.com" target="_blank">Visitar myAllSupport.com</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Contacto</div>
+          <h3>Agendemos tu diagnóstico o cuéntanos tu necesidad.</h3>
+          <p>Resolvemos soporte SAP, continuidad tecnológica, ciberseguridad y automatización operativa. Te respondemos pronto.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://calendly.com/christian-htc/30min" target="_blank">Agendar 30 min</a>
+            <a class="btn-secondary" href="mailto:info@myallsupport.cl">info@myallsupport.cl</a>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/xeoyrnwz" method="POST">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu email" required>
+          <input type="text" name="empresa" placeholder="Empresa">
+          <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu reto" required></textarea>
+          <button class="btn" type="submit" style="justify-content:center;">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>myAllSupport.cl</h3>
+        <p class="muted-link">Tecnología para el crecimiento. Soporte proactivo y personalizado para tu negocio.</p>
+        <a class="muted-link" href="https://www.myallsupport.com" target="_blank">Ir a myAllSupport.com</a>
+      </div>
+      <div>
+        <h4>Oficinas</h4>
+        <p class="muted-link">🇺🇸 Estados Unidos<br>104 Ronda Ann LN Hot Springs, Arkansas 71909-9645</p>
+        <p class="muted-link">🇲🇽 México<br>Lago Alberto 442 - Suite 530, Anáhuac II Sección, Miguel Hidalgo, CDMX</p>
+        <p class="muted-link">🇨🇴 Cali<br>-</p>
+      </div>
+      <div>
+        <h4>Accesos rápidos</h4>
+        <p class="muted-link"><a class="muted-link" href="#pilares">Soluciones</a> · <a class="muted-link" href="#pasos">Metodología</a> · <a class="muted-link" href="#contacto">Contacto</a></p>
+        <p class="muted-link"><a class="muted-link" href="https://hasm.grupocnet.com:9001/sap(bD1lcyZjPTAwMSZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm?sap-client=001&sap-language=ES/" target="_blank">Requerimientos e incidentes SAP</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
