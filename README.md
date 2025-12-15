@@ -1,21 +1,20 @@
-# MyAllSupport
+# myAllSupport landing
 
-Pequeña página estática en español con un formulario de contacto que envía los datos a Formspree y un enlace directo a la agenda de Calendly.
+Landing estática en español que replica la propuesta de valor de myAllSupport: soportes SAP/TI, continuidad tecnológica, ciberseguridad y evolución con datos/IA. Incluye secciones de hero, propuesta de valor, pasos, clientes, noticias y contacto.
 
-## Estructura
-- `index.html`: tarjeta centrada con formulario (`nombre`, `email`, `mensaje`) y enlace a Calendly.
-- `CNAME`: dominio personalizado para despliegue (p. ej. GitHub Pages).
+## Archivo principal
+- `index.html`: contiene todo el contenido y estilos en línea. El formulario de contacto envía a Formspree (`action="https://formspree.io/f/xeoyrnwz"`) y el CTA de agenda usa Calendly.
 
-## Cómo usarlo
-1) Clona o descarga el repositorio.  
-2) Abre `index.html` en tu navegador para verlo localmente.  
-3) Ajusta el `action` del formulario en `index.html` si quieres usar otra clave de Formspree.  
-4) (Opcional) Cambia el enlace de Calendly en el mismo archivo si usas otra agenda.
+## Direcciones (footer)
+- 🇺🇸 Estados Unidos: 104 Ronda Ann LN Hot Springs, Arkansas 71909-9645
+- 🇲🇽 México: Lago Alberto 442 - Suite 530, Anáhuac II Sección, Miguel Hidalgo, CDMX
+- 🇨🇱 Chile: El Clonqui 1077, Vitacura, Santiago, R. Metropolitana
+- 🇨🇴 Colombia: AV 7 NORTE # 25 N - 147 OF 101, Cali - Valle
 
-## Despliegue rápido
-- En GitHub Pages basta con colocar los archivos en la rama `main` o `gh-pages`; el `CNAME` fijará el dominio personalizado.
-- En cualquier hosting estático (Netlify, Vercel, etc.) solo necesitas publicar `index.html` y `CNAME` si aplicara.
+## Uso local
+1) Clona o descarga el repo.  
+2) Abre `index.html` en el navegador.  
+3) Ajusta el `action` del formulario si usas otra clave de Formspree; cambia el enlace de Calendly si aplica.
 
-## Personalización básica
-- Estilos en línea dentro de `index.html`. Puedes moverlos a un `.css` si crece el sitio.
-- Cambia colores o tipografía editando los selectores `body`, `.card`, `input`, `textarea` y `button`.
+## Despliegue estático
+- Sube `index.html` a tu hosting estático preferido (GitHub Pages, Netlify, Vercel, etc.). No hay dependencias ni build.
