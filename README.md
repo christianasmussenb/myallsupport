@@ -2,6 +2,18 @@
 
 Landing estática en español que replica la propuesta de valor de myAllSupport: soportes SAP/TI, continuidad tecnológica, ciberseguridad y evolución con datos/IA. Incluye secciones de hero, propuesta de valor, pasos, clientes, noticias y contacto.
 
+## 📚 Documentación Completa
+
+Para documentación detallada del proyecto, consulta nuestro **[Wiki completo](wiki/README.md)**:
+
+- 🏠 [Inicio del Wiki](wiki/Home.md) - Visión general del proyecto
+- 🏗️ [Arquitectura](wiki/Arquitectura.md) - Estructura técnica y diseño
+- 🚀 [Guía de Despliegue](wiki/Despliegue.md) - Cómo publicar el sitio
+- 🎨 [Personalización](wiki/Personalizacion.md) - Cómo customizar el sitio
+- 📦 [Servicios](wiki/Servicios.md) - Descripción detallada de servicios
+- 📞 [Contacto](wiki/Contacto.md) - Información de contacto completa
+- 🤝 [Contribución](wiki/Contribucion.md) - Cómo contribuir al proyecto
+
 ## Archivo principal
 - `index.html`: contiene todo el contenido y estilos en línea. El formulario de contacto envía a Formspree (`action="https://formspree.io/f/xeoyrnwz"`) y el CTA de agenda usa Calendly.
 
@@ -18,3 +30,5 @@ Landing estática en español que replica la propuesta de valor de myAllSupport:
 
 ## Despliegue estático
 - Sube `index.html` a tu hosting estático preferido (GitHub Pages, Netlify, Vercel, etc.). No hay dependencias ni build.
+
+Para más opciones de despliegue y configuración avanzada, consulta la [Guía de Despliegue](wiki/Despliegue.md).
