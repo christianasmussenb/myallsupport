@@ -1,3 +1,7 @@
+---
+description: Generate a self-contained HTML presentation deck from a topic and outline. Use when the user wants to create slides, a deck, or a presentation.
+---
+
 # /slides
 
 Generate a self-contained HTML presentation deck from a topic and outline the user provides in chat. Never produce bullet-list slides — every slide must use one of the 12 purposeful layouts below.
